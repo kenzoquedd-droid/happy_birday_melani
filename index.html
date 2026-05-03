@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🎂 Happy Birthday Meilani Cians 🎈</title>
+    <!-- Google Fonts & Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 10% 30%, #f9c5d1, #f3a6b0, #e1a0c2);
+            font-family: 'Quicksand', 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* ========= LAYAR BACKGROUND FLOATING ========= */
+        .floating-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        /* Elemen floating umum */
+        .float-item {
+            position: absolute;
+            will-change: transform;
+            pointer-events: none;
+            z-index: 1;
+            filter: drop-shadow(3px 5px 12px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Balon */
+        .balloon {
+            font-size: 2.4rem;
+            animation: floatBalloon 7s infinite alternate ease-in-out;
+        }
+
+        /* Petasan berwarna-warni (simbol dan animasi berkedip) */
+        .firework {
+            font-size: 1.8rem;
+            animation: fireSpark 1.5s infinite alternate;
+        }
+
+        /* Bunga Aktif */
+        .flower {
+            font-size: 2rem;
+            animation: swayFlower 3.5s infinite ease-in-out;
+        }
+
+        /* Animasi balon melayang */
+        @keyframes floatBalloon {
+            0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            100% { transform: translateY(-40px) translateX(18px) rotate(5deg); }
+        }
+
+        @keyframes fireSpark {
+            0% { transform: scale(0.85) rotate(-5deg); opacity: 0.7; text-shadow: 0 0 2px gold; }
+            100% { transform: scale(1.3) rotate(8deg); opacity: 1; text-shadow: 0 0 15px rgb(255, 100, 0); }
+        }
+
+        @keyframes swayFlower {
+            0% { transform: rotate(-6deg) translateY(0px);}
+            50% { transform: rotate(9deg) translateY(-14px);}
+            100% { transform: rotate(-6deg) translateY(0px);}
+        }
+
+        /* Partikel bintang kecil (opsional) */
+        .star-particle {
+            position: absolute;
+            background: radial-gradient(circle, #fffacd, #ffdd99);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: twinkleStar 2.5s infinite alternate;
+        }
+        @keyframes twinkleStar {
+            0% { opacity: 0.2; transform: scale(0.6);}
+            100% { opacity: 1; transform: scale(1.4);}
+        }
+
+        /* ========= KARTU UTAMA ========= */
+        .card {
+            position: relative;
+            z-index: 20;
+            max-width: 750px;
+            width: 90%;
+            background: rgba(255, 248, 235, 0.88);
+            backdrop-filter: blur(14px);
+            border-radius: 65px 65px 75px 75px;
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(255, 220, 180, 0.7), 0 0 0 14px rgba(255, 200, 150, 0.4);
+            padding: 30px 28px 45px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .card:hover {
+            transform: scale(1.01) translateY(-6px);
+            box-shadow: 0 45px 65px rgba(0,0,0,0.3);
+        }
+
+        /* Logo & Ikon unik */
+        .logo-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .logo-icon {
+            background: linear-gradient(145deg, #ff9966, #ff5e62);
+            width: 65px;
+            height: 65px;
+            border-radius: 35px 25px 45px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            animation: gentleWobble 2.2s infinite;
+        }
+        .logo-icon:nth-child(2) {
+            background: linear-gradient(135deg, #b86bff, #f06d9e);
+            border-radius: 30px 40px 30px 40px;
+            animation-delay: 0.3s;
+        }
+        .logo-icon:nth-child(3) {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            border-radius: 50% 20% 50% 20%;
+            animation-delay: 0.6s;
+        }
+        @keyframes gentleWobble {
+            0%,100%{ transform: translateY(0px) rotate(0deg);}
+            50%{ transform: translateY(-8px) rotate(2deg);}
+        }
+
+        /* Judul dan Nama */
+        .greeting {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #d43f84, #f7b42c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            margin: 8px 0 5px;
+        }
+        .name {
+            font-size: 2.7rem;
+            font-weight: 800;
+            color: #b13e6b;
+            background: rgba(255, 235, 205, 0.8);
+            display: inline-block;
+            padding: 0 20px;
+            border-radius: 60px;
+            margin: 8px 0;
+        }
+        .from {
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: #2c3e50bb;
+            display: inline-block;
+            padding: 5px 22px;
+            border-radius: 40px;
+            color: #fff2e0;
+            margin: 8px 0 16px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ========= FOTO 3D DIMENSI ========= */
+        .photo-3d {
+            margin: 20px auto;
+            width: 200px;
+            height: 200px;
+            perspective: 800px;
+            cursor: pointer;
+        }
+        .photo-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            border-radius: 30px;
+            box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3);
+        }
+        /* efek 3D berputar saat hover */
+        .photo-3d:hover .photo-wrapper {
+            transform: rotateY(12deg) rotateX(6deg) scale(1.02);
+        }
+        /* sisi depan foto */
+        .photo-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            border: 4px solid rgba(255, 245, 210, 0.9);
+        }
+        .photo-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 28px;
+            transition: transform 0.4s;
+        }
+        .photo-3d:hover .photo-front img {
+            transform: scale(1.03);
+        }
+        /* efek tambahan bayangan 3D */
+        .photo-shadow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            background: rgba(0,0,0,0.2);
+            top: 12px;
+            left: 12px;
+            filter: blur(12px);
+            z-index: -1;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+        .photo-3d:hover .photo-shadow {
+            top: 18px;
+            left: 18px;
+            opacity: 0.7;
+        }
+
+        /* Pesan ucapan */
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.55;
+            font-weight: 500;
+            background: rgba(253, 245, 230, 0.85);
+            border-radius: 55px;
+            padding: 18px 22px;
+            margin: 20px 0;
+            color: #4a2e38;
+            border-left: 12px solid #ffae70;
+            border-right: 12px solid #ffb37c;
+        }
+
+        /* Tombol kejutan + petasan interaktif */
+        .btn-celebrate {
+            background: linear-gradient(105deg, #ff6a88, #ff99ac);
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 60px;
+            color: white;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+            transition: all 0.25s ease;
+            margin: 12px 0 5px;
+        }
+        .btn-celebrate i {
+            font-size: 1.5rem;
+        }
+        .btn-celebrate:hover {
+            transform: scale(1.06);
+            background: linear-gradient(105deg, #ff5274, #ff87a0);
+            box-shadow: 0 18px 28px rgba(0,0,0,0.3);
+        }
+        .btn-celebrate:active {
+            transform: scale(0.97);
+        }
+
+        /* Music toggle estetik */
+        .music-toggle {
+            margin-top: 22px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50px;
+            padding: 8px 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: 0.2s;
+            border: 1px solid rgba(255,245,200,0.8);
+        }
+        .music-toggle i {
+            font-size: 1.3rem;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.7rem;
+            opacity: 0.85;
+            color: #3c2a2f;
+        }
+
+        @media (max-width: 550px) {
+            .greeting { font-size: 1.8rem; }
+            .name { font-size: 1.9rem; }
+            .message { font-size: 0.95rem; }
+            .photo-3d { width: 150px; height: 150px; }
+            .logo-icon { width: 50px; height: 50px; font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-bg" id="floatingBg"></div>
+
+<div class="card">
+    <div class="logo-area">
+        <div class="logo-icon"><i class="fas fa-gem"></i></div>
+        <div class="logo-icon"><i class="fas fa-birthday-cake"></i></div>
+        <div class="logo-icon"><i class="fas fa-heart"></i></div>
+    </div>
+    <div class="greeting">🎉 Selamat Ulang Tahun 🎉</div>
+    <div class="name">🌸MEILANI CIANS 🌸</div>
+    <div class="from"> Dari  (Eru_cd)</div>
+
+    <!-- Foto 3D Dimensi: Gunakan placeholder gambar yang estetik (bisa diganti dengan foto real) 
+         Untuk contoh menggunakan gambar online bunga/cake, tapi kamu bisa ganti src dengan foto Meilani -->
+    <div class="photo-3d" id="photo3d">
+        <div class="photo-wrapper">
+            <div class="photo-front">
+                <img src="ani.png" alt="Foto Ulang Tahun Meilani Cians" id="birthdayImg">
+            </div>
+            <div class="photo-shadow"></div>
+        </div>
+    </div>
+    <!-- Keterangan kecil: klik foto untuk efek sentuhan tambahan -->
+    
+    <div class="message">
+        <i class="fas fa-star" style="color: #ffaa44; margin-right: 8px;"></i> 
+        Untukmu, Meilani Cians yang luar biasa!  Semoga setiap harimu dipenuhi dengan bunga-bunga kebahagiaan, balon mimpi, dan dapat jodoh yg setia. <br>
+        <strong style="display: inline-block; margin-top: 12px;">✨ by :eru_cd (kawan)  ✨</strong>
+    </div>
+    
+    <button class="btn-celebrate" id="btnSurprise">
+        <i class="fas fa-gift"></i> Klik Kejutan & Petasan <i class="fas fa-fire"></i>
+    </button>
+    
+    <div class="music-toggle" id="musicToggle">
+        <i class="fas fa-music" id="musicIcon"></i> <span id="musicText">Putar Musik Latar</span>
+    </div>
+    <div class="footer">
+        <i class="fas fa-balloon"></i> Dengan cinta dan animasi spesial dari Eru_cd <i class="fas fa-balloon"></i>
+    </div>
+</div>
+
+<!-- Audio Latar (Happy Birthday Instrumental simpel) menggunakan sumber bebas -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="ulangtahun.mp3" type="audio/mpeg">
+    <!-- fallback jika tidak bisa, tetap ada UI -->
+</audio>
+<audio id="popSound" preload="auto">
+    <source src="ulangtahun.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    (function() {
+        // ========== ANIMASI LAYAR: BALON, BUNGA, PETASAN (floating background aktif) ==========
+        const bgContainer = document.getElementById('floatingBg');
+        const iconsList = [
+            { type: 'balloon', icons: ['🎈', '🎈', '🎈', '🎈', '🎈'], class: 'balloon' },
+            { type: 'flower', icons: ['🌸', '🌼', '🌻', '🌺', '🌸', '🌷'], class: 'flower' },
+            { type: 'firework', icons: ['🎆', '✨', '🎇', '✨', '🌟', '💥', '🎉'], class: 'firework' }
+        ];
+
+        function getRandomPosition() {
+            return {
+                left: Math.random() * 100,
+                top: Math.random() * 100,
+                size: Math.random() * 1.2 + 0.8 // scale
+            };
+        }
+
+        function createFloatingElements() {
+            // Bersihkan dulu
+            bgContainer.innerHTML = '';
+            // Buat sekitar 55 elemen untuk kesan ramai tapi tetap cantik
+            const total = 58;
+            for (let i = 0; i < total; i++) {
+                const randGroup = iconsList[Math.floor(Math.random() * iconsList.length)];
+                const randIcon = randGroup.icons[Math.floor(Math.random() * randGroup.icons.length)];
+                const pos = getRandomPosition();
+                const div = document.createElement('div');
+                div.classList.add('float-item', randGroup.class);
+                div.style.left = pos.left + '%';
+                div.style.top = pos.top + '%';
+                div.style.fontSize = (Math.random() * 1.2 + 1.2) + 'rem';
+                div.style.opacity = 0.6 + Math.random() * 0.4;
+                div.style.animationDuration = (Math.random() * 5 + 4) + 's';
+                div.style.animationDelay = (Math.random() * 5) + 's';
+                div.innerHTML = randIcon;
+                // rotasi acak
+                div.style.transform = `rotate(${Math.random() * 30 - 15}deg)`;
+                bgContainer.appendChild(div);
+            }
+            // tambahkan bintang partikel kecil juga biar makin estetik
+            for (let i = 0; i < 120; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star-particle');
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 6 + 2 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = Math.random() * 2 + 2 + 's';
+                bgContainer.appendChild(star);
+            }
+        }
+        createFloatingElements();
+        // Respon jika resize layar, tetap proporsional (tidak perlu regenerasi full, tetap oke)
+        
+        // ========== FITUR FOTO 3D ========== 
+        // Kita bisa menambahkan efek klik pada foto agar berputar 3D sementara
+        const photo3dDiv = document.getElementById('photo3d');
+        const photoWrapper = document.querySelector('.photo-wrapper');
+        if (photo3dDiv) {
+            photo3dDiv.addEventListener('click', () => {
+                // efek putar 3D extra interaktif
+                photoWrapper.style.transform = 'rotateY(18deg) rotateX(10deg) scale(1.05)';
+                setTimeout(() => {
+                    photoWrapper.style.transform = '';
+                }, 800);
+                // slight bounce effect
+            });
+        }
+        
+        // ========== TOMBOL KEJUTAN + PETASAN DINAMIS (BALON & PETASAN MELAYANG INTERAKTIF) ==========
+        const surpriseBtn = document.getElementById('btnSurprise');
+        // fungsi membuat confetti / ledakan petasan instant di layar (visual)
+        function burstConfetti() {
+            // membuat petasan meledak dan animasi teks di sekitar kard ~
+            for (let i = 0; i < 38; i++) {
+                const conf = document.createElement('div');
+                conf.classList.add('float-item', 'firework');
+                conf.style.position = 'fixed';
+                conf.style.left = (Math.random() * 80 + 10) + '%';
+                conf.style.top = (Math.random() * 70 + 10) + '%';
+                conf.style.fontSize = (Math.random() * 1.6 + 1.2) + 'rem';
+                conf.style.zIndex = 999;
+                conf.style.pointerEvents = 'none';
+                const symbols = ['🎇', '✨', '🎆', '💥', '⭐', '🌟', '🧨', '🎉', '🎊'];
+                conf.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                conf.style.animation = 'fireSpark 0.6s ease-in-out forwards';
+                conf.style.opacity = '1';
+                document.body.appendChild(conf);
+                setTimeout(() => conf.remove(), 900);
+            }
+            // juga munculkan teks "HBD MEILANI!" sementara
+            const msgDiv = document.createElement('div');
+            msgDiv.innerText = '✨🎂 HAPPY BIRTHDAY MEILANI CIANS! 🎂✨';
+            msgDiv.style.position = 'fixed';
+            msgDiv.style.bottom = '30%';
+            msgDiv.style.left = '50%';
+            msgDiv.style.transform = 'translateX(-50%)';
+            msgDiv.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            msgDiv.style.color = '#ffefb9';
+            msgDiv.style.padding = '12px 25px';
+            msgDiv.style.borderRadius = '60px';
+            msgDiv.style.fontWeight = 'bold';
+            msgDiv.style.fontSize = '1.3rem';
+            msgDiv.style.zIndex = '1000';
+            msgDiv.style.backdropFilter = 'blur(8px)';
+            msgDiv.style.fontFamily = "'Quicksand', sans-serif";
+            msgDiv.style.whiteSpace = 'nowrap';
+            document.body.appendChild(msgDiv);
+            setTimeout(() => msgDiv.style.opacity = '0', 1500);
+            setTimeout(() => msgDiv.remove(), 2100);
+            
+            // juga efek balon tambahan yang muncul di layar
+            for (let i = 0; i < 12; i++) {
+                const balloonPop = document.createElement('div');
+                balloonPop.classList.add('float-item', 'balloon');
+                balloonPop.style.position = 'fixed';
+                balloonPop.style.left = (Math.random() * 90) + '%';
+                balloonPop.style.bottom = '-30px';
+                balloonPop.style.fontSize = (Math.random() * 1.8 + 1.5) + 'rem';
+                balloonPop.innerHTML = ['🎈', '🎈', '🎈', '🎈', '🎈', '🎈', '🎈'][Math.floor(Math.random()*7)];
+                balloonPop.style.animation = 'floatBalloon 1.8s ease-out forwards';
+                balloonPop.style.opacity = '0.9';
+                document.body.appendChild(balloonPop);
+                setTimeout(() => balloonPop.remove(), 2800);
+            }
+            // suara efek pop (jika audio bisa dimainkan)
+            const popAudio = document.getElementById('popSound');
+            if (popAudio) {
+                popAudio.currentTime = 0;
+                popAudio.play().catch(e => console.log("audio pop tidak bisa diputar otomatis"));
+            }
+        }
+        
+        surpriseBtn.addEventListener('click', () => {
+            burstConfetti();
+            // juga getar sedikit efek pada card
+            const cardEl = document.querySelector('.card');
+            if (cardEl) {
+                cardEl.style.transform = 'scale(1.02)';
+                setTimeout(() => cardEl.style.transform = '', 300);
+            }
+        });
+        
+        // ========== MUSIK BACKGROUND DENGAN IKON ==========
+        const music = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicTextSpan = document.getElementById('musicText');
+        let isPlaying = false;
+        // karena file audio mungkin autoplay diblokir, kita set user interaksi dulu
+        music.volume = 0.4;
+        
+        function playMusic() {
+            music.play().then(() => {
+                isPlaying = true;
+                musicIcon.className = "fas fa-volume-up";
+                musicTextSpan.innerText = "Musik ON";
+            }).catch(err => {
+                console.log("autoplay ditolak, butuh interaksi");
+                isPlaying = false;
+                musicIcon.className = "fas fa-music";
+                musicTextSpan.innerText = "Putar Musik";
+            });
+        }
+        
+        function pauseMusic() {
+            music.pause();
+            isPlaying = false;
+            musicIcon.className = "fas fa-music";
+            musicTextSpan.innerText = "Putar Musik";
+        }
+        
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                pauseMusic();
+            } else {
+                playMusic();
+            }
+        });
+        
+        // karena browser memblokir autoplay, kita coba mulai saat user klik pertama kali di area tombol atau foto? tapi untuk user experience, kita bisa biarkan manual
+        // Agar lebih ramah: saat pertama kali klik tombol kejutan, coba juga mainkan musik (jika belum dimulai) - optional menambah semarak
+        const tryAutoMusicOnInteraction = () => {
+            if (!isPlaying) {
+                playMusic().catch(e=>{});
+            }
+        };
+        surpriseBtn.addEventListener('click', tryAutoMusicOnInteraction);
+        photo3dDiv.addEventListener('click', tryAutoMusicOnInteraction);
+        musicToggle.addEventListener('click', () => {}); // sudah ada
+        
+        // Efek transisi tambahan: balon baru dinamis setiap 15 detik untuk kesegaran
+        setInterval(() => {
+            // refresh beberapa elemen latar tanpa menghilangkan semua agar tetap dinamis, tapi tidak terlalu berlebihan
+            if (document.body.contains(bgContainer) && bgContainer.children.length > 30) {
+                // hapus beberapa balon/bunga lama lalu tambah baru agar terasa hidup
+                for (let i = 0; i < 6; i++) {
+                    if (bgContainer.children[i]) bgContainer.children[i].remove();
+                }
+                for (let i = 0; i < 6; i++) {
+                    const randGroup = iconsList[Math.floor(Math.random() * iconsList.length)];
+                    const randIcon = randGroup.icons[Math.floor(Math.random() * randGroup.icons.length)];
+                    const div = document.createElement('div');
+                    div.classList.add('float-item', randGroup.class);
+                    div.style.left = Math.random() * 100 + '%';
+                    div.style.top = Math.random() * 100 + '%';
+                    div.style.fontSize = (Math.random() * 1.2 + 1.2) + 'rem';
+                    div.style.animationDuration = (Math.random() * 5 + 4) + 's';
+                    div.style.animationDelay = '0s';
+                    div.innerHTML = randIcon;
+                    bgContainer.appendChild(div);
+                    setTimeout(() => div.remove(), 11000);
+                }
+            }
+        }, 13000);
+        
+        // efek hover pada foto 3d kita sudah punya css, tambahkan tooltip kecil
+        const imgElement = document.getElementById('birthdayImg');
+        if (imgElement) {
+            // Gambar default menggunakan placeholder namun bisa diganti dengan foto asli. 
+            // Untuk keperluan tampilan 3D yang indah, kita bisa menggunakan gambar tema bunga/ultah.
+            // Tapi agar lebih personal, kita set gambar default gambar ceria ulang tahun (gratis)
+            imgElement.src = "ani.png";
+            // alternative: foto estetik (bisa diganti link foto Meilani)
+            // namun karena saya tidak punya foto asli, saya beri gambar yang menggambarkan kebahagiaan.
+            imgElement.alt = "Foto Spesial Meilani Cians";
+            imgElement.style.transition = "all 0.3s";
+        }
+        
+        // juga menambahkan teks info pada foto untuk kesan 3D interaktif
+        const photoContainer = document.querySelector('.photo-3d');
+        if (photoContainer) {
+            const hint = document.createElement('div');
+            hint.innerHTML = '<i class="fas fa-hand-pointer"></i> sentuh foto untuk efek 3D';
+            hint.style.fontSize = '0.7rem';
+            hint.style.marginTop = '8px';
+            hint.style.opacity = '0.7';
+            hint.style.color = '#6b3e4a';
+            photoContainer.parentNode.insertBefore(hint, photoContainer.nextSibling);
+        }
+        
+        console.log("✨ Halaman ultah Meilani Cians siap dengan bunga, balon, petasan & foto 3D dari Eru_cd ✨");
+    })();
+</script>
+</body>
+</html>
